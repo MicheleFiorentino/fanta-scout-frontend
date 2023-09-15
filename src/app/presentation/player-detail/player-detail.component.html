@@ -1,0 +1,11 @@
+<div class="player-container">
+  <mat-card class="player-card">
+    <app-player-detail-panel [player]="players[0]"></app-player-detail-panel>
+  </mat-card>
+
+  <mat-card *ngFor="let title of titles; let i = index" class="table-card">
+    <app-player-detail-table [players]="players" [title]="title" [displayedColumns]="displayedColumns[i]"></app-player-detail-table>
+  </mat-card>
+
+  <div style="margin-bottom: 15px;"></div>
+</div>

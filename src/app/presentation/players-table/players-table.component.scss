@@ -1,0 +1,18 @@
+img{
+  width: 4vh;
+  padding-top: 4px;
+}
+
+td, th{
+  text-align: center;
+}
+
+.table-container {
+  height: 65vh;
+  width: 100%;
+}
+
+.mat-mdc-table tr.mat-mdc-row:hover{
+  background-color: lightcyan;
+  cursor: pointer;
+}

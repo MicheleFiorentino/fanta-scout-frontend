@@ -1,0 +1,48 @@
+<!-- loading spinner -->
+<mat-spinner diameter="120" color="primary" *ngIf="loading"
+[value]="spinnerValue" [mode]="spinnerMode" class="front-spinner"></mat-spinner>
+<mat-spinner diameter="120" color="accent" *ngIf="loading"
+[value]="spinnerValueBackground" [mode]="spinnerMode" class="back-spinner"></mat-spinner>
+<div class="overlay" *ngIf="loading"></div>
+
+<!-- actual code -->
+<mat-card class="players-header">
+<div class="header">
+  <div>
+    <mat-form-field>
+      <mat-label>Stagione</mat-label>
+      <mat-select [(value)]="selectedSeason" (selectionChange)="onSeasonChange()">
+        <mat-option *ngFor="let season of seasons" [value]="season">
+          {{season}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Filtra calciatori</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Nome" #input>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-checkbox class="favourite" [(ngModel)]="areFavsSelected" (change)="toggleFavs()">solo preferiti</mat-checkbox>
+  </div>
+</div>
+</mat-card>
+
+<mat-card class="players-table">
+  <mat-tab-group>
+    <mat-tab label="Portieri">
+      <app-players-table [players]="filteredGoalkeepers" [position]="positions[0]"></app-players-table>
+    </mat-tab>
+    <mat-tab label="Difensori" >
+      <app-players-table [players]="filteredDefenders" [position]="positions[1]"></app-players-table>
+    </mat-tab>
+    <mat-tab label="Centrocampisti">
+      <app-players-table [players]="filteredMidfielders" [position]="positions[2]"></app-players-table>
+    </mat-tab>
+    <mat-tab label="Attaccanti">
+      <app-players-table [players]="filteredStrikers" [position]="positions[3]"></app-players-table>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>

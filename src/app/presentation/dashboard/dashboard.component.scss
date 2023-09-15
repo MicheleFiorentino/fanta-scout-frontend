@@ -1,0 +1,46 @@
+.players-table{
+  margin: 1vh;
+}
+
+/* Styles for the mat-spinner */
+.front-spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001; /* Make sure the spinner appears above everything */
+}
+
+.back-spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000; /* Make sure the spinner appears above everything */
+}
+
+/* Styles for the overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 999; /* Make sure the overlay is below the spinner but above the content */
+}
+
+.players-header{
+  margin: 1vh;
+}
+
+.header{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.header div{
+  flex: 1;
+}
