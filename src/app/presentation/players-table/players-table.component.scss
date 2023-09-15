@@ -4,7 +4,12 @@ img{
 }
 
 td, th{
-  text-align: center;
+  text-align: center !important;
+}
+
+:host ::ng-deep .mat-sort-header-container {
+  display: flex;
+  justify-content: center;
 }
 
 .table-container {
